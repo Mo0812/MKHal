@@ -1,0 +1,19 @@
+{
+    "name": "mk/hal",
+    "description": "Implementation of HAL standart for using in REST API responses or similiar",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Moritz Kanzler",
+            "email": "developer@moritzkanzler.de"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {},
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    }
+}
