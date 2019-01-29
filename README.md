@@ -60,7 +60,10 @@ $hal->embedCollection('coupon', array(
     new HALObject('/coupon/6')
 ));
 
-$hal->export();
+// use export() for json serialization
+echo $hal->export(); // calls json_encode internally
+// or simple encode the HALObject
+echo json_encode($hal);
 ```
 
 The call of the `export()` method creates a JSON representation of the HAL specification:
