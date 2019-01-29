@@ -6,7 +6,12 @@ use MK\HAL\HALLink;
 use MK\HAL\HALCurie;
 use MK\HAL\HALMode;
 
-final class HALTest extends TestCase {
+final class HALFunctionalTest extends TestCase {
+    /**
+     * Root HAL object
+     *
+     * @var HALObject
+     */
     private $hal;
 
     public function setUp() {
@@ -108,7 +113,7 @@ final class HALTest extends TestCase {
     public function testHALJsonOutput() {
         $hal = $this->hal;
 
-        $this->assertJsonStringEqualsJsonFile(__DIR__.'/TestAssert.json', json_encode($hal));
-        $this->assertJsonStringEqualsJsonFile(__DIR__.'/TestAssert.json', $hal->export());
+        $this->assertJsonStringEqualsJsonFile(__DIR__.'/assets/TestAsset.json', json_encode($hal));
+        $this->assertJsonStringEqualsJsonFile(__DIR__.'/assets/TestAsset.json', $hal->export());
     }
 }

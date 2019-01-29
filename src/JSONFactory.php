@@ -1,8 +1,17 @@
 <?php
 namespace MK\HAL;
 
+/**
+ * Factory class for generating JSON output
+ */
 class JSONFactory implements FactoryInterface{
 
+    /**
+     * Converts a HALObject object into an array structure which can be outputted as JSON representation according to the HAL specification.
+     *
+     * @param HALObject $halObject
+     * @return array
+     */
     static public function serialize(HALObject $halObject) {
         $hal = array(
             "_links" => array(
