@@ -10,8 +10,11 @@ MKHal is an implementation of the HAL specification in PHP. It can be used to bu
 
 ## Roadmap
 
--   [ ] Implement basic HAL specification
--   [ ] Enable _curies_
+-   [x] Implement basic HAL specification
+-   [x] Enable _curies_
 -   [ ] Auto create HAL data from given objects
--   [ ] JSON export / output
+-   [x] JSON export / output
 -   [ ] XML export / output
+-   [ ] Read HAL objects to use library as client too
+-   [ ] Well structured class hierarchy
+-   [ ] Slim Framework integration
