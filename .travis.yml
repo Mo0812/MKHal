@@ -4,4 +4,4 @@ php:
 before_install:
     - composer install
 script:
-    - phpunit
+    - phpunit --bootstrap vendor/autoload.php tests/HALTest.php
