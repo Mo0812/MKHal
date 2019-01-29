@@ -1,0 +1,34 @@
+{
+    "_links": {
+        "self": { "href": "/customer" },
+        "search": {
+            "href": "/customer?search=?"
+        }
+    },
+    "_embedded": {
+        "product": [
+            {
+                "_links": {
+                    "self": { "href": "/product/1" },
+                    "next": { "href": "/product/2" }
+                }
+            }
+        ],
+        "coupon": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "/coupon/5"
+                    }
+                }
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "/coupon/6"
+                    }
+                }
+            }
+        ]
+    }
+}

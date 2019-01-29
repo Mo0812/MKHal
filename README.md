@@ -6,5 +6,6 @@ MKHal is an implementation of the HAL specification in PHP. It can be used to bu
 
 -   [ ] Implement basic HAL specification
 -   [ ] Enable _curies_
+-   [ ] Auto create HAL data from given objects
 -   [ ] JSON export / output
 -   [ ] XML export / output
