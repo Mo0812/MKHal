@@ -3,19 +3,15 @@ namespace MK\HAL;
 
 class HALLink implements \JsonSerializable {
 
-    public $label;
-    public $href;
+    private $href;
 
-    function __construct($label, $href) {
-        $this->label = $label;
+    function __construct($href) {
         $this->href = $href;
     }
 
     public function jsonSerialize() {
         return array(
-            $this->label => array(
-                "href" => $this->href
-            )
+            "href" => $this->href
         );
     }
 
