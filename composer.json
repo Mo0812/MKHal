@@ -1,6 +1,5 @@
 {
     "name": "mk/hal",
-    "version": "1.0.0",
     "license": "MIT",
     "description": "Implementation of HAL standart for using in REST API responses or similiar",
     "type": "library",
