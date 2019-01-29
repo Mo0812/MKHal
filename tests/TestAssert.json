@@ -1,19 +1,32 @@
 {
     "_links": {
         "self": { "href": "/customer" },
-        "search": {
-            "href": "/customer?search=?"
-        }
-    },
-    "_embedded": {
-        "product": [
+        "curies": [
             {
-                "_links": {
-                    "self": { "href": "/product/1" },
-                    "next": { "href": "/product/2" }
-                }
+                "name": "ea",
+                "href": "http://example.com/docs/rels/{rel}",
+                "templated": true
             }
         ],
+        "search": {
+            "href": "/customer?search=?"
+        },
+        "admin": [
+            {
+                "href": "/admin/2"
+            },
+            {
+                "href": "/admin/7"
+            }
+        ]
+    },
+    "_embedded": {
+        "product": {
+            "_links": {
+                "self": { "href": "/product/1" },
+                "next": { "href": "/product/2" }
+            }
+        },
         "coupon": [
             {
                 "_links": {
