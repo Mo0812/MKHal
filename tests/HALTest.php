@@ -4,6 +4,7 @@ use PHPUnit\Framework\TestCase;
 use MK\HAL\HALObject;
 use MK\HAL\HALLink;
 use MK\HAL\HALCurie;
+use MK\HAL\HALMode;
 
 final class HALTest extends TestCase {
     private $hal;
@@ -90,10 +91,24 @@ final class HALTest extends TestCase {
         $this->assertInstanceOf(HALObject::class, $chaining[1]);
     }
 
+    public function testHALAttributeOverwrite() {
+        $hal = $this->hal;
+        $hal->addLink('search', new HALLink('/customer?find=?'));
+        $link = $hal->getLink('search');
+        
+        $this->assertInternalType('array', $link);
+        $this->assertEquals(2, count($link));
+
+        $hal->addLink('search', new HALLink('/customer?lookup=?'), HALMode::OVERWRITE);
+        $link = $hal->getLink('search');
+        
+        $this->assertInstanceOf(HALLink::class, $link);
+    }
+
     public function testHALJsonOutput() {
         $hal = $this->hal;
 
         $this->assertJsonStringEqualsJsonFile(__DIR__.'/TestAssert.json', json_encode($hal));
-        $this->assertJsonStringEqualsJsonFile(__DIR__.'/TestAssert.json', $hal->exportJson());
+        $this->assertJsonStringEqualsJsonFile(__DIR__.'/TestAssert.json', $hal->export());
     }
 }
