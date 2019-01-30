@@ -33,6 +33,7 @@ class JSONFactory implements FactoryInterface{
         foreach($halObject->getAllEmbedded() as $label => $objects) {
             $hal["_embedded"][$label] = $objects;
         }
+        $hal = array_merge($hal, $halObject->getData());
         return $hal;
     }
 }

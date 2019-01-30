@@ -18,7 +18,7 @@ class HALObject implements \JsonSerializable {
      * @param string $self
      * @param mixed $data
      */
-    function __construct(string $self, $data = null) {
+    function __construct(string $self, $data = array()) {
         $this->self = $self;
         $this->data = $data;
         $this->curies = array();
@@ -33,6 +33,25 @@ class HALObject implements \JsonSerializable {
      */
     public function getSelf() {
         return $this->self;
+    }
+
+    /**
+     * Add an array with additional data beside the HAL attributes
+     *
+     * @param array $data
+     * @return void
+     */
+    public function addData(array $data) {
+        $this->data = $data;
+    }
+
+    /**
+     * Returns the embedded data
+     *
+     * @return array
+     */
+    public function getData() {
+        return $this->data;
     }
 
     /**

@@ -17,6 +17,14 @@ final class HALFunctionalTest extends TestCase {
     public function setUp() {
         $this->hal = new HALObject('/customer');
 
+        $this->hal->addData(array(
+            "offers" => 5,
+            "prices" => array(
+                "normal" => "10.99",
+                "season" => "5.99"
+            )
+        ));
+
         $this->hal->addCurie(new HALCurie('ea', 'http://example.com/docs/rels/{rel}'));
 
         $this->hal->addLink('search', new HALLink('/customer?search=?'));

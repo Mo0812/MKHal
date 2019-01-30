@@ -66,7 +66,8 @@ final class HALReturnTypeTest extends TestCase {
             array('string', $hal->export()),
             array('array', $hal->jsonSerialize()),
             array('string', json_encode($hal->jsonSerialize())),
-            array('array', JSONFactory::serialize($hal))
+            array('array', JSONFactory::serialize($hal)),
+            array('array', $hal->getData())
         );
     }
 

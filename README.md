@@ -41,6 +41,14 @@ use MK\HAL\HALCurie;
 
 $hal = new HALObject('/orders');
 
+$hal->addData(array(
+    "offers" => 5,
+    "prices" => array(
+        "normal" => "10.99",
+        "season" => "5.99"
+    )
+));
+
 $hal->addCurie(new HALCurie('ea', 'http://example.com/docs/rels/{rel}'));
 
 $hal->addLink('next', new HALLink('/orders?page=2'));
@@ -92,6 +100,11 @@ The call of the `export()` method creates a JSON representation of the HAL speci
                 "href": "/admin/5"
             }
         ]
+    },
+    "offers": 5,
+    "prices": {
+        "normal": "10.99",
+        "season": "5.99"
     },
     "_embedded": {
         "product": {

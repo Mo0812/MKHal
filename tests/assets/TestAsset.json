@@ -20,6 +20,11 @@
             }
         ]
     },
+    "offers": 5,
+    "prices": {
+        "normal": "10.99",
+        "season": "5.99"
+    },
     "_embedded": {
         "product": {
             "_links": {
