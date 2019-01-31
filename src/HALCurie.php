@@ -1,23 +1,12 @@
 <?php
 namespace MK\HAL;
 
-class HALCurie implements \JsonSerializable {
-
-    public $name;
-    public $href;
-    public $templated;
+/**
+ * Curie representation of HAL sepcification. This class uses and extends HALLink
+ */
+class HALCurie extends HALLink implements \JsonSerializable {
 
     function __construct($name, $href, $templated = true) {
-        $this->name = $name;
-        $this->href = $href;
-        $this->templated = $templated;
-    }
-
-    public function jsonSerialize() {
-        return array(
-            "name" => $this->name,
-            "href" => $this->href,
-            "templated" => $this->templated
-        );
+        parent::__construct($href, null, $name, $templated);
     }
 }
