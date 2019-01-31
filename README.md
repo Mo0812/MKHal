@@ -141,9 +141,9 @@ The call of the `export()` method creates a JSON representation of the HAL speci
 
 -   [x] Implement basic HAL specification
 -   [x] Enable _curies_
--   [ ] Auto create HAL data from given objects
+-   [x] Well structured class hierarchy
 -   [x] JSON export / output
+-   [x] Auto create HAL data from given objects
 -   [ ] XML export / output
 -   [ ] Read HAL objects to use library as client too
--   [ ] Well structured class hierarchy
 -   [ ] Slim Framework integration
