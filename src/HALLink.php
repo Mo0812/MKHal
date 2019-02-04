@@ -35,7 +35,7 @@ class HALLink implements \JsonSerializable {
         $arr = array();
         
         foreach(get_object_vars($this) as $attr => $val) {
-            if(!is_null($val)) {
+            if($val !== null) {
                 $arr[$attr] = $val;
             }
         }

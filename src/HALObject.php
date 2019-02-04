@@ -193,9 +193,9 @@ class HALObject implements \JsonSerializable {
      */
     private function addAttributeChaining(string $attribute, string $label, $data, int $mode) {
         if(isset($this->$attribute[$label]) && $mode !== HALMode::OVERWRITE) {
-            $prev_attrs = $this->$attribute[$label];
-            $prev_attrs = is_array($prev_attrs) ? $prev_attrs : array($prev_attrs);
-            $this->$attribute[$label] = array_merge($prev_attrs, array($data));
+            $prevAttrs = $this->$attribute[$label];
+            $prevAttrs = is_array($prevAttrs) ? $prevAttrs : array($prevAttrs);
+            $this->$attribute[$label] = array_merge($prevAttrs, array($data));
         } else {
             $this->$attribute[$label] = $data;
         }
